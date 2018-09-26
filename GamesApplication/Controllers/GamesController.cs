@@ -124,8 +124,7 @@ namespace GamesApplication.Controllers
         {
             var queue = new BufferBlock<string>();
             GamesProducer.ProduceAsync(queue);
-            var consumer = GamesConsumer.ConsumeAsync(queue);
-            await Task.WhenAll(consumer, queue.Completion);
+            await GamesConsumer.ConsumeAsync(queue);
             return RedirectToAction("Index");
         }
 

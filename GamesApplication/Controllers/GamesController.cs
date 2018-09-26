@@ -124,7 +124,15 @@ namespace GamesApplication.Controllers
         {
             var queue = new BufferBlock<string>();
             GamesProducer.ProduceAsync(queue);
-            await GamesConsumer.ConsumeAsync(queue);           
+            var consumer = GamesConsumer.ConsumeAsync(queue);
+            await Task.WhenAll(consumer, queue.Completion);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult RemoveAll()
+        {
+            db.Games.RemoveRange(db.Games);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

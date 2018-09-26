@@ -39,19 +39,6 @@ namespace GamesApplication.helpers
 
         
 
-
-
-       /* public void parse_html_game(HtmlNode html_game)
-        {
-            HtmlNode link = html_game.SelectSingleNode("//span[contains(@class, 'glyphicon glyphicon-eye-open iconhover')]");
-            string url = site_url + link.ParentNode.Attributes["href"].Value;
-            //string url = link.SelectSingleNode("//a").InnerHtml;
-            HtmlNode datetime_div = html_game.SelectSingleNode("//div[contains(@itemprop, 'startDate')]");
-            string datetime = datetime_div.Attributes["content"].Value;
-            DateTime startTime = DateTime.Parse(datetime);
-            var team_names_spans = html_game.SelectNodes("//span[contains(@itemprop, 'name')]");
-            string teamName1 = team_names_spans[0].InnerHtml;
-            string teamName2 = team_names_spans[1].InnerHtml;
-        }*/
+    
     }
 }
